@@ -18,7 +18,7 @@ success_url > Optional > A URL where you want to redirect the user after they pa
 cancel_url > Optional > A URL where you want to redirect the user if they cancel.<br>
 <br><br>
 HTML Form:
-<form action="https://faucetpay.io/merchant/webscr" method="post">
+<code><form action="https://faucetpay.io/merchant/webscr" method="post">
     <input type="text" name="merchant_username" value="[YOUR USERNAME]">
     <br>
     <input type="text" name="item_description" value="[ITEM DESCRIPTION]">
@@ -38,4 +38,4 @@ HTML Form:
     <input type="text" name="cancel_url" value="[CANCEL URL]">
     <br>
     <input type="submit" name="submit" value="Make Payment">
-</form>
+</form></code>
