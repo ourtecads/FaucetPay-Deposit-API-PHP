@@ -1,6 +1,6 @@
 <?php
 
-	require_once . 'YOUR DATABASE CONFIG PATH';
+	require_once 'YOUR DATABASE CONFIG PATH';
 
 $order_currency = 'BTC';
 
