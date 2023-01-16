@@ -11,7 +11,7 @@ $payment_info = file_get_contents("https://faucetpay.io/merchant/get-payment/" .
 $payment_info = json_decode($payment_info, true); //decode result
 $token_status = $payment_info['valid']; //$token_status is optional
 
-$merchant_username = $payment_info['merchant_username']; //get merchant username from request result
+$merchant_username = strtolower($payment_info['merchant_username']); //get merchant username from request result
 $amount1 = $payment_info['amount1']; //get amount from request result 
 $currency1 = $payment_info['currency1']; ////get currency from request result
 $amount2 = $payment_info['amount2']; //get second amount from request result if available
@@ -21,7 +21,7 @@ $custom = $payment_info['custom']; ///get invoice information or order id from r
 $my_username = "YOUR FAUCETPAY USERNAME";
 
 //validate request if match with order
-if ($my_username == $merchant_username && $token_status == true) {    //$token_status is optional
+if (strtolower($my_username) == $merchant_username && $token_status == true) {    //$token_status is optional
 
 //prepare to get order information from database, configure based on your database table and column
 $invo = db()->prepare("SELECT * FROM deposits WHERE id = " .$custom);
